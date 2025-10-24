@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Zap, Shield, Network, TrendingUp } from "lucide-react";
+import { BuySellCrypto } from "@/components/BuySellCrypto";
 
 const Index = () => {
   return (
@@ -29,7 +30,7 @@ const Index = () => {
       </section>
 
       <section className="container max-w-6xl mx-auto px-4 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <Card className="border-2 hover:border-primary transition-colors">
             <CardHeader>
               <Zap className="h-10 w-10 text-primary mb-2" />
@@ -58,6 +59,29 @@ const Index = () => {
               <CardDescription>Stake tokens and earn up to 12.5% APY</CardDescription>
             </CardHeader>
           </Card>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <BuySellCrypto />
+          <div className="space-y-6">
+            <Card className="border-2 border-accent/20">
+              <CardHeader>
+                <CardTitle>Quick Actions</CardTitle>
+                <CardDescription>Start your DeFi journey</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <Link to="/transaction" className="block">
+                  <Button className="w-full" size="lg">Send POL Tokens</Button>
+                </Link>
+                <Link to="/swap" className="block">
+                  <Button className="w-full" variant="secondary" size="lg">Token Swap</Button>
+                </Link>
+                <Link to="/stake" className="block">
+                  <Button className="w-full" variant="outline" size="lg">Stake & Earn</Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
     </div>
